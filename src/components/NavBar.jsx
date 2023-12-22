@@ -3,27 +3,56 @@
 
 import React from 'react' 
 import CartWidget from './CartWidget'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Flex, Box, Spacer, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+
 
 const NavBar = () => {
 
   return (
-    <div>
-        <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
-          <Navbar.Brand href="#home">OjalaMacetas</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Catalogo</Nav.Link>
-            <Nav.Link href="#features">Contacto</Nav.Link>
-            <Nav.Link href="#pricing">Ayuda</Nav.Link>
-          </Nav>
+    <>
+      <Flex>
+          <Link to={"/"}>
+            <Box p='4'>
+              OjalaMacetas
+            </Box>
+          </Link>
+          <Spacer />
+          
+          <Menu>
+              <MenuButton>
+                Acciones
+              </MenuButton>
+              <MenuList>
+                <Link to={"/catalogo"}>
+                  <MenuItem>Catalogo</MenuItem>
+                </Link>
+                <Link to={"/promociones"}>
+                  <MenuItem>Promociones</MenuItem>
+                </Link>
+                <Link to={"/carrito"}>
+                  <MenuItem>Carrito</MenuItem>
+                </Link>
+                <Link to={"/contacto"}>
+                  <MenuItem>Contacto</MenuItem>
+                </Link>
+                <Link to={"/ayuda"}>
+                  <MenuItem>Ayuda</MenuItem>
+                </Link>
+              </MenuList>
+          </Menu>
 
-          <CartWidget/>
-        </Container>
-      </Navbar>
-    </div>
+          <Spacer />
+
+          <Box p='4'>
+            <CartWidget />
+          </Box>
+
+      </Flex>
+
+
+      
+    </>
   )
 }
 
