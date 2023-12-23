@@ -8,3 +8,33 @@
 .svgCarrito {
   margin-right: 1vw;
 }
+
+.cards {
+  width: 18vw;
+  height: 35vw;
+  margin-bottom: 8vw;
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: row;
+  margin-left: 3vw;
+}
+
+.cardBody {
+  padding: 0%;
+}
+
+.tituloCards, .precioCards {
+  margin: auto;
+}
+
+.botonVerDetalles {
+  margin: auto;
+  
+}
+.divFooterCard {
+  flex-direction: column;
+}
+
+.divDeCards {
+  height: 35vw;
+}

@@ -37,24 +37,35 @@ const ItemListContainer = () => {
     console.log (error)
   })
 
-  const macetasFiltradas = macetas.filter((maceta) => maceta.categoria == categoriaId)
+  const macetasFiltradas = macetas.filter((maceta) => maceta.categoria === categoriaId)
   console.log(macetasFiltradas)
 
   
 
-        if (macetasFiltradas.length === 0) {
+       if (macetasFiltradas.length === 0) {
           return (
             <div>
-              <ItemList macetas={macetas} />
+              <ItemList const macetasResultado={macetas} />
             </div>
           )
         } else {
           return (
-            <ItemList macetas={macetasFiltradas} /> 
+            <ItemList const macetasResultado={macetasFiltradas} /> 
           )
         }
         
       }
+      
+
+     /* return (
+        <div>
+          {
+            categoriaId ? <ItemList const macetasResultado={macetasFiltradas} /> : <ItemList const macetasResultado={macetas} /> 
+          }
+        </div>
+      )
+        }
+      */
 
 
 export default ItemListContainer

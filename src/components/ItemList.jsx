@@ -1,10 +1,10 @@
 import React from 'react'
 import Item from './Item'
-const ItemList = ({macetas}) => {
+const ItemList = ({macetasResultado}) => {
   return (
         <div>
         {
-            macetas.map((m) => {
+            macetasResultado.map((m) => {
                 return (
                       <Item 
                       img = {m.img}

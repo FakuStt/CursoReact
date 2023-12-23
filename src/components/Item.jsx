@@ -1,36 +1,43 @@
 import React from 'react'
 import {Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Link} from '@chakra-ui/react'
-import ItemCount from './ItemCount'
+
 
 const Item = ({img, titulo, precio, id}) => {
   return (
-    <div>
-        <Card maxW='sm'>
-            <CardBody>
-                <Link to={"/producto/productoId"} >
+    <div className='divDeCards'>
+        <Card maxW='sm' className='cards'>
+            <CardBody className='cardBody'>
+                
                     <Image
                     src= {img}
                     alt='maceta artesanal'
                     borderRadius='lg'
                     />
                     <Stack mt='6' spacing='3'>
-                    <Heading size='md'>{titulo}</Heading>
-                    <Text color='blue.600' fontSize='2xl'>
+                    <Heading size='md' className='tituloCards'>{titulo}</Heading>
+                    <Text color='blue.600' fontSize='2xl' className='precioCards'>
                         {precio}
                     </Text>
                     </Stack>
-                </Link>
+                
             </CardBody>
             <Divider />
-            <CardFooter>
-                <ButtonGroup spacing='2'>
-                    <Button>
-                        <Link to={`/producto/${id}`}>
-                            Ver detalles
-                        </Link>
-                    </Button>
-                </ButtonGroup>
-            </CardFooter>
+            
+                <CardFooter className='divFooterCard'>
+                    <ButtonGroup spacing='2'>
+                        
+                        <Button className='botonVerDetalles'>
+                    
+                            <Link to={`/item/${id}`}>
+                                       
+                                        Ver detalles
+                                        
+                            </Link>
+
+                        </Button>
+                        
+                    </ButtonGroup>
+                </CardFooter>
         </Card>
     </div>
   )
