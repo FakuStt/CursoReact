@@ -1,40 +1,109 @@
+
 .divCartWidget {
-  display: flex;
-  flex-direction: row;
-  width: 5vw;
-  justify-content: end;
-}
-
-.svgCarrito {
-  margin-right: 1vw;
-}
-
-.cards {
-  width: 18vw;
-  height: 35vw;
-  margin-bottom: 8vw;
-  margin-top: 2vw;
-  display: flex;
-  flex-direction: row;
-  margin-left: 3vw;
-}
-
-.cardBody {
-  padding: 0%;
-}
-
-.tituloCards, .precioCards {
-  margin: auto;
-}
-
-.botonVerDetalles {
-  margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: 5vw;
+    justify-content: end;
+  }
   
-}
-.divFooterCard {
-  flex-direction: column;
-}
+  .svgCarrito {
+    margin-right: 1vw;
+  }
+  
+  .cards {
+    width: 18vw;
+    height: 35vw;
+    margin-bottom: 8vw;
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: row;
+    margin-left: 3vw;
+  }
+  
+  .cardBody {
+    padding: 0%;
+  }
+  
+  .tituloCards, .precioCards {
+    margin: auto;
+  }
+  
+  .buttonGroupCount {
+    margin: auto;
+    
+  }
+  .divFooterCard {
+    flex-direction: column;
+  }
+  
+  .divDeCards {
+    height: 35vw;
+    width: 25%;
+    display:inline-block;
+    flex-direction: column;
+  }
 
-.divDeCards {
-  height: 35vw;
-}
+  .botonRestar {
+    margin-left: 2vw;
+    width: 3vw;
+
+  }
+  .botonAgregarCarrito {
+    margin: auto;
+  }
+  .botonSumar {
+    margin-right: 2vw;
+    width: 3vw;
+  }
+  .divDeContador {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0%;
+  }
+  .pDeContador{
+    width: 25vw;
+    margin: auto;
+    text-align: center;
+    font-size: 2vw;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .divFooterCard {
+    align-content: center;
+  }
+
+  .tituloDetallado {
+    text-align: center;
+  }
+
+  .tamDetallado {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif
+  }
+
+  .precioDetallado {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+
+  }
+
+  .descripcionDetallada {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif
+  }
+
+  .idDetallado {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif
+  }
+
+  .divCardDetallada {
+    margin: auto;
+    width: 31vw;
+    align-items: center;
+  }
+
+  
+  

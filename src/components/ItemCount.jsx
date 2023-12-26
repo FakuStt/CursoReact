@@ -29,15 +29,17 @@ const ItemCount = () => {
     }
 
   return (
-    <div>
+    <div className='divDeContador'>
 
-        <Button colorScheme='teal' size='xs' onClick = {restar}>-</Button>
+        <p className='pDeContador'>{contador}</p>
 
-        <p>{contador}</p>
+        <Button colorScheme='teal' size='m' onClick = {restar} className='botonRestar'>-</Button>
 
-        <Button colorScheme='teal' size='xs' onClick = {sumar}>+</Button>
+        <Button onClick = {alertAgregadoAlCarrito} className='botonAgregarCarrito'>Agregar al carrito</Button>
 
-        <Button onClick = {alertAgregadoAlCarrito} >Agregar al carrito</Button>
+        <Button colorScheme='teal' size='m' onClick = {sumar} className='botonSumar'>+</Button>
+
+        
 
     </div>
 

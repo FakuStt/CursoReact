@@ -3,29 +3,31 @@ import {Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, Button
 import ItemCount from './ItemCount'
 import { useParams } from 'react-router-dom'
 
-const ItemDetail = ({maceta}) => {
+const ItemDetail = ( {item} ) => {
   
-  const { id } = useParams()
 
     return (
+        <div className='divCardDetallada'>
     <Card maxW='sm'>
         <CardBody>
                 <Image
-                src= {maceta.img}
+                src= {item.img}
                 alt='maceta artesanal'
                 borderRadius='lg'
                 />
                 <Stack mt='6' spacing='3'>
-                <Heading size='md'>{maceta.titulo}</Heading>
-                <Text>
-                    Tamaño: {maceta.categoria}
-                    Id: {maceta.key}
+                <Heading size='md' className='tituloDetallado'>{item.titulo}</Heading>
+                <Text className='tamDetallado'>
+                    Tamaño: {item.categoria}
                 </Text>
-                <Text>
-                    {maceta.descripcion}
+                <Text className='idDetallado'>
+                    Id: {item.id}
                 </Text>
-                <Text color='blue.600' fontSize='2xl'>
-                    {maceta.precio}
+                <Text className='descripcionDetallada'>
+                    {item.descripcion}
+                </Text>
+                <Text color='blue.600' fontSize='2xl' className='precioDetallado'>
+                    ${item.precio}
                 </Text>
                 </Stack>
         </CardBody>
@@ -36,6 +38,7 @@ const ItemDetail = ({maceta}) => {
             </ButtonGroup>
         </CardFooter>
     </Card>
+    </div>
   )
 }
 

@@ -1,22 +1,24 @@
 import React from 'react'
-import {Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Link} from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
+import {Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button} from '@chakra-ui/react'
 
+const Item = ( {maceta} ) => {
 
-const Item = ({img, titulo, precio, id}) => {
   return (
     <div className='divDeCards'>
+        
         <Card maxW='sm' className='cards'>
             <CardBody className='cardBody'>
                 
                     <Image
-                    src= {img}
+                    src= {maceta.img}
                     alt='maceta artesanal'
                     borderRadius='lg'
                     />
                     <Stack mt='6' spacing='3'>
-                    <Heading size='md' className='tituloCards'>{titulo}</Heading>
+                    <Heading size='md' className='tituloCards'>{maceta.titulo}</Heading>
                     <Text color='blue.600' fontSize='2xl' className='precioCards'>
-                        {precio}
+                        ${maceta.precio}
                     </Text>
                     </Stack>
                 
@@ -24,21 +26,22 @@ const Item = ({img, titulo, precio, id}) => {
             <Divider />
             
                 <CardFooter className='divFooterCard'>
-                    <ButtonGroup spacing='2'>
-                        
-                        <Button className='botonVerDetalles'>
+                    <ButtonGroup spacing='2' className='buttonGroupCount'>
                     
-                            <Link to={`/item/${id}`}>
-                                       
-                                        Ver detalles
-                                        
-                            </Link>
+                        <Link to={`/item/${maceta.id}`}>
 
-                        </Button>
-                        
+                            <Button className='botonVerDetalles'>
+                                    
+                                Ver detalles
+
+                            </Button>
+                                    
+                        </Link>
+
                     </ButtonGroup>
                 </CardFooter>
         </Card>
+
     </div>
   )
 }

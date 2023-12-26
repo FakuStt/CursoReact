@@ -13,7 +13,7 @@ const App = () => {
 
   return (
 
-    <ChakraProvider>
+    
       <BrowserRouter>
       
       < NavBar />
@@ -28,7 +28,7 @@ const App = () => {
       </Routes>
 
       </BrowserRouter>
-      </ChakraProvider>
+      
   )
 }
 
