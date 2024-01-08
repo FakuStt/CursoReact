@@ -2,13 +2,14 @@ import { React, useEffect, useState } from 'react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import data from '../data/data.json'
+import Loader from './Loader'
 
 const ItemListContainer = () => {
 
+  const [loading, setLoading] = useState(true)
 
   const [macetas, setMacetas] = useState([])
   
-
   const {categoriaId} = useParams()
 
 
@@ -17,7 +18,7 @@ const ItemListContainer = () => {
         
       setTimeout(() => {
             resolve(data);
-            console.log(macetas)
+            setLoading(false)
        }, 0)
     })
 }
@@ -32,9 +33,28 @@ const ItemListContainer = () => {
                   setMacetas(res)
               }   
           })
-    }, [categoriaId]) //o categoriaId dentro de los parentesis rectos
+    }, [categoriaId])
 
   
+
+  /*  if (loading) {
+      return 
+      <Loader />
+    } else {
+      return (
+
+        <div>
+  
+            <ItemList macetas={macetas} />
+  
+        </div>
+  
+  
+      )
+    }
+    */
+
+
     return (
 
       <div>
@@ -44,7 +64,7 @@ const ItemListContainer = () => {
       </div>
 
 
-    )
+    ) 
 }
 
 

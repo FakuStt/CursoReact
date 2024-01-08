@@ -24,11 +24,11 @@ const ItemDetailContainer = () => {
 
 
         useEffect(() => {
-            pedirMacetaPorId(Number(id)) // o Number(id)
+            pedirMacetaPorId(Number(id))
                 .then((res) => {
                     setItem(res)
                 })
-        }, [id]) // o id entre parentesis rectos
+        }, [id])
 
 
         return (
