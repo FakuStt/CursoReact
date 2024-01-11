@@ -1,9 +1,4 @@
-import React from 'react'
+import { createContext, useState } from 'react'
 
-const CartContext = () => {
-  return (
-    <div>CartContext</div>
-  )
-}
+export const CartContext = createContext(null)
 
-export default CartContext

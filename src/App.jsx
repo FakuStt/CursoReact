@@ -2,35 +2,38 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
-import Carrito from './components/Carrito'
+import Cart from './components/Cart'
 import ItemDetailContainer from './components/ItemDetailContainer'
-import ShoppingCartContext from './context/ShoppingCartContext'
-import Loader from './components/Loader'
+import { CartContext } from './context/CartContext'
+import { useState } from 'react'
+
 
 
 const App = () => {
 
+ const [cart, setCart] = useState([])
+
   return (
 
-    
+    <CartContext.Provider value={ {cart, setCart} }>
       <BrowserRouter>
 
-          <ShoppingCartContext>
+          
+          
         
               < NavBar />
 
               <Routes>
 
                 <Route exact path='/' element={<ItemListContainer />} />
-                <Route exact path='/carrito' element={<Carrito />} />
+                <Route exact path='/carrito' element={<Cart />} />
                 <Route exact path='/item/:id' element={<ItemDetailContainer />} />
                 <Route exact path='/categoria/:categoriaId' element={<ItemListContainer />} />
 
               </Routes>
 
-          </ShoppingCartContext>
-
       </BrowserRouter>
+      </CartContext.Provider>
       
   )
 }

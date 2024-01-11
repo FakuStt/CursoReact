@@ -27,18 +27,23 @@ const ItemListContainer = () => {
     useEffect(() => {
       pedirMacetas()
           .then((res) => {
-              if (categoriaId){
-                  setMacetas(res.filter((maceta) => maceta.categoria === categoriaId))
-              }else {
-                  setMacetas(res)
-              }   
+            if (categoriaId){
+              setTimeout (() => {
+                setMacetas(res.filter((maceta) => maceta.categoria === categoriaId))
+                setLoading(false)
+              }, 0)
+            }else {
+              setTimeout (() => {
+                setMacetas(res)
+                setLoading(false)
+              },1200)
+            }   
+         
           })
-    }, [categoriaId])
+    }, [categoriaId]) 
 
-  
 
-  /*  if (loading) {
-      return 
+    if (loading) {
       <Loader />
     } else {
       return (
@@ -48,23 +53,10 @@ const ItemListContainer = () => {
             <ItemList macetas={macetas} />
   
         </div>
-  
-  
       )
-    }
-    */
-
-
-    return (
-
-      <div>
-
-          <ItemList macetas={macetas} />
-
-      </div>
-
-
-    ) 
+   }
+    
+    
 }
 
 

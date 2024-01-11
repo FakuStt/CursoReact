@@ -2,13 +2,15 @@ import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/ShoppingCartContext'
 
-const Carrito = () => {
+const Cart = () => {
 
-  const {cart, setCart} = useContext(CartContext)
+ // const {cart, setCart} = useContext(CartContext)
 
   return (
-    <div></div>
+    <div>
+      Carrito
+    </div>
   )
 }
 
-export default Carrito
+export default Cart

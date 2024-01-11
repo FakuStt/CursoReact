@@ -1,7 +1,11 @@
 import {React, useEffect, useState } from 'react'
 import { Button, Stack, Alert, AlertIcon } from '@chakra-ui/react'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
 
-const ItemCount = () => {
+const ItemCount = (item) => {
+
+    const {cart, setCart} = useContext(CartContext)
 
     const [contador, setContador] = useState(0)
 
@@ -28,6 +32,18 @@ const ItemCount = () => {
       } 
     }
 
+    const agregaralCarrito = () => {
+      const itemAgregado = {item, contador}
+      console.log(itemAgregado)
+      if (cart.find((maceta) => maceta.id === itemAgregado.item.id)){
+        console.log(itemAgregado.item)
+      console.log("Esta en el carrito")
+    } else {
+      console.log("no esta en el carrito")
+      console.log(item)
+    }
+  }
+
   return (
     <div className='divDeContador'>
 
@@ -35,7 +51,7 @@ const ItemCount = () => {
 
         <Button colorScheme='teal' size='m' onClick = {restar} className='botonRestar'>-</Button>
 
-        <Button onClick = {alertAgregadoAlCarrito} className='botonAgregarCarrito'>Agregar al carrito</Button>
+        <Button onClick = {agregaralCarrito} className='botonAgregarCarrito'>Agregar al carrito</Button>
 
         <Button colorScheme='teal' size='m' onClick = {sumar} className='botonSumar'>+</Button>
 

@@ -28,4 +28,4 @@ const ItemList = ( {macetas} ) => {
     </div>
   )
 }
-export default ItemList
+export default React.memo(ItemList)
