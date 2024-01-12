@@ -2,6 +2,7 @@ import {React, useEffect, useState } from 'react'
 import { Button, Stack, Alert, AlertIcon } from '@chakra-ui/react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
+import { useParams } from 'react-router-dom'
 
 const ItemCount = (item) => {
 
@@ -33,15 +34,21 @@ const ItemCount = (item) => {
     }
 
     const agregaralCarrito = () => {
-      const itemAgregado = {item, contador}
-      console.log(itemAgregado)
-      if (cart.find((maceta) => maceta.id === itemAgregado.item.id)){
-        console.log(itemAgregado.item)
+      const itemAgregado = {...item.item, contador}
+      
+      const newCart = [...cart];
+      const estaEnElCarrito = newCart.find((maceta) => maceta.id === item.item.id)
+
+
+      if (estaEnElCarrito){
       console.log("Esta en el carrito")
+      estaEnElCarrito.contador = estaEnElCarrito.contador + contador
+      setCart(newCart)
     } else {
       console.log("no esta en el carrito")
-      console.log(item)
+      setCart ( [...cart, itemAgregado] )
     }
+
   }
 
   return (
