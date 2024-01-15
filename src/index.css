@@ -105,5 +105,17 @@
     align-items: center;
   }
 
+  .cardDeCart {
+    height: 12vw;
+  }
   
+  .stackDeCart {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   
+  .precioTotalCarrito {
+    text-align: center;
+    margin-top: 1vw;
+  }

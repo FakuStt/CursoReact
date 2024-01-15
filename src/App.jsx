@@ -4,18 +4,18 @@ import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import Cart from './components/Cart'
 import ItemDetailContainer from './components/ItemDetailContainer'
-import { CartContext } from './context/CartContext'
-import { useState } from 'react'
+import CartProvider from './context/CartContext'
+
 
 
 
 const App = () => {
 
-  const [cart, setCart] = useState([])
+  
 
   return (
 
-    <CartContext.Provider value={ {cart, setCart} }>
+    <CartProvider>
       <BrowserRouter>
 
           
@@ -33,7 +33,7 @@ const App = () => {
               </Routes>
 
       </BrowserRouter>
-      </CartContext.Provider>
+      </CartProvider>
       
   )
 }

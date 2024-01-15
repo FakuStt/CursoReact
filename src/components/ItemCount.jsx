@@ -44,9 +44,11 @@ const ItemCount = (item) => {
       console.log("Esta en el carrito")
       estaEnElCarrito.contador = estaEnElCarrito.contador + contador
       setCart(newCart)
+      console.log(cart)
     } else {
       console.log("no esta en el carrito")
       setCart ( [...cart, itemAgregado] )
+      console.log(cart)
     }
 
   }

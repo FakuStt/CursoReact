@@ -1,14 +1,10 @@
 import React from 'react'
 import {Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup} from '@chakra-ui/react'
-import ItemCount from './itemCount'
-import { useParams } from 'react-router-dom'
-import { useContext } from 'react'
-import { CartContext } from '../context/CartContext'
+import ItemCount from './ItemCount'
+
 
 const ItemDetail = ( {item} ) => {
-  
-    const {cart, setCart} = useContext(CartContext)
-    console.log(cart)
+    
 
     return (
         <div className='divCardDetallada'>
