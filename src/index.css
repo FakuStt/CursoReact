@@ -119,3 +119,7 @@
     text-align: center;
     margin-top: 1vw;
   }
+
+  .botonEliminarProducto {
+    margin-right: auto;
+  }

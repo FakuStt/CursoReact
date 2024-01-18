@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer'
 import Cart from './components/Cart'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import CartProvider from './context/CartContext'
+import Form from './components/Form'
 
 
 
@@ -29,6 +30,7 @@ const App = () => {
                 <Route exact path='/carrito' element={<Cart />} />
                 <Route exact path='/item/:id' element={<ItemDetailContainer />} />
                 <Route exact path='/categoria/:categoriaId' element={<ItemListContainer />} />
+                <Route exact path='/carrito/pedido' element={<Form />} />
 
               </Routes>
 

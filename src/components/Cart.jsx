@@ -56,8 +56,8 @@ const Cart = () => {
                       </Text>
                     </CardBody>
 
-                    <CardFooter>
-                      <Button variant='solid' colorScheme='blue' 
+                    <CardFooter className='botonEliminarProducto'>
+                      <Button variant='solid' colorScheme='blue'  
                       onClick={() => eliminarProducto(mace.id)} >
                         Eliminar producto
                       </Button>
@@ -66,11 +66,7 @@ const Cart = () => {
                 </Card>
                 ))
               }
-                 
-
                 
-              
-
           </CardBody>
       </Card>
 
@@ -83,6 +79,11 @@ const Cart = () => {
               <Button colorScheme='teal' variant='solid' onClick={handleVaciarCart} >
                 Vaciar Carrito
               </Button>
+              <Link to={"/carrito/pedido"}>
+                <Button colorScheme='teal' variant='solid'>
+                  Ordenar pedido
+                </Button>
+              </Link>
             </Stack>
         </>
       : 

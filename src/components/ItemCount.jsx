@@ -10,17 +10,6 @@ const ItemCount = (item) => {
 
     const [contador, setContador] = useState(0)
 
-    const alertAgregadoAlCarrito = () => {
-    <Stack spacing={3}>
-      
-      <Alert status='success'>
-        <AlertIcon />
-          Se han agregado {contador} macetas al carrito!
-      </Alert>
-
-    </Stack>
-    }
-
     const sumar = () => {
       if (contador < 10) {
         setContador(contador + 1)
