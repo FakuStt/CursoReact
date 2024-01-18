@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
-import data from '../data/data.json'
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 import Loader from './Loader'
 
 const ItemListContainer = () => {
@@ -13,51 +13,39 @@ const ItemListContainer = () => {
   const {categoriaId} = useParams()
 
 
-  const pedirMacetas = () => {
-    return new Promise ((resolve, reject) => {
-        
-      setTimeout(() => {
-            resolve(data);
-            setLoading(false)
-       }, 0)
-    })
-}
+
+useEffect(() => {
+
+  const db = getFirestore()
+
+  const itemsCollection = collection(db, "macetas")
+
+  getDocs(itemsCollection).then((snapshot) => {
+    const docs = snapshot.docs.map((doc) => doc.data())
+    setMacetas(docs)
+    setLoading(false)
+  })
+
+}, [])
 
 
-    useEffect(() => {
-      pedirMacetas()
-          .then((res) => {
-            if (categoriaId){
-              setTimeout (() => {
-                setMacetas(res.filter((maceta) => maceta.categoria === categoriaId))
-                setLoading(false)
-              }, 0)
-            }else {
-              setTimeout (() => {
-                setMacetas(res)
-                setLoading(false)
-              },1200)
-            }   
-         
-          })
-    }, [categoriaId]) 
+
+const filtrado = macetas.filter((maceta) => maceta.categoria === categoriaId);
 
 
-    if (loading) {
-      <Loader />
+    if (loading === true) {
+      return <Loader />
     } else {
       return (
 
-        <div>
+    <>
   
-            <ItemList macetas={macetas} />
-  
-        </div>
+      {categoriaId ? <ItemList macetas={filtrado} /> : <ItemList macetas={macetas} />}
+
+    </>
+
       )
    }
-    
-    
-}
-
+  }
 
 export default ItemListContainer

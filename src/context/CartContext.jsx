@@ -2,8 +2,6 @@ import { createContext, useEffect, useState } from 'react'
 
 export const CartContext = createContext(null)
 
-// const cartEnJson = JSON.parse(localStorage.getItem("cart")) || []
-
 export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
@@ -20,14 +18,12 @@ export const CartProvider = ({children}) => {
       setCart([])
     }
 
-
-/*    useEffect(() => {
-      localStorage.setItem("cart", JSON.stringify(cart))
-    }, [cart])
-*/
+    const eliminarProducto = (id) => {
+      setCart(cart.filter((mace) => mace.id !== id));
+    }
 
     return(
-        <CartContext.Provider value={{cart, setCart, contadorDeCart, precioTotalCarrito, vaciarCart}}>
+        <CartContext.Provider value={{cart, setCart, contadorDeCart, precioTotalCarrito, vaciarCart, eliminarProducto}}>
             {children}
         </CartContext.Provider>
     )

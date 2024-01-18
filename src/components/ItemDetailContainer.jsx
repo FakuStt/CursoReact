@@ -1,42 +1,43 @@
 import {React, useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
-import data from '../data/data.json'
+import {doc, getDoc, getFirestore} from 'firebase/firestore'
+import Loader from './Loader'
 
 const ItemDetailContainer = () => {
 
   const { id } = useParams()
-  const [item, setItem] = useState(null)
+  const [item, setItem] = useState([]) //null
+  const [loading, setLoading] = useState(true)
 
-  const pedirMacetaPorId = (id) => {
-    return new Promise ((resolve, reject) => {
-        const item = data.find((macetaIndividual) => macetaIndividual.id === id)
-        
-        if (item) {
-            resolve(item)
-        } else {
-            reject({
-                Error: 'El item que estas solicitando no esta disponible'
-            })
+
+  useEffect(() => {
+    const db = getFirestore();
+
+    const oneItem = doc(db, "macetas", `${id}`);
+    getDoc(oneItem).then((snapshot) => {
+        if (snapshot.exists()) {
+            const doc = snapshot.data()
+            setItem(doc)
+            setLoading(false)
         }
     })
-}
+}, [])
 
 
-        useEffect(() => {
-            pedirMacetaPorId(Number(id))
-                .then((res) => {
-                    setItem(res)
-                })
-        }, [id])
+
+        if (loading === true) {
+            return <Loader />
+         } else { 
+            return (
+                <div>
+                    {item && <ItemDetail item={item} />}
+                </div>
+            )
+         }
 
 
-        return (
-            <div>
-                {item && <ItemDetail item={item} />}
-            </div>
-        )
-
+    
         }
 
 

@@ -7,11 +7,12 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-  const { cart, precioTotalCarrito, vaciarCart } = useContext(CartContext);
+  const { cart, precioTotalCarrito, vaciarCart, eliminarProducto } = useContext(CartContext);
 
   const handleVaciarCart = () => {
     vaciarCart()
   }
+
 
   return (
     <div>
@@ -56,8 +57,9 @@ const Cart = () => {
                     </CardBody>
 
                     <CardFooter>
-                      <Button variant='solid' colorScheme='blue'>
-                        Eliminar una unidad
+                      <Button variant='solid' colorScheme='blue' 
+                      onClick={() => eliminarProducto(mace.id)} >
+                        Eliminar producto
                       </Button>
                     </CardFooter>
                   </Stack>
