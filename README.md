@@ -4,6 +4,8 @@
 
 __*Mi e-commerce se trata sobe ventas de macetas artesanales. Elegi este tema porque es un emprendimiento exclusivo de un familiar. Por lo tanto, durante toda la creacion de la pagina, se trabajo y se puede observar, diseños relacionado con este tema. Espero disfruten de este README.*__
 
+[Instagram del e-commerce](https://www.instagram.com/ojalamacetas/)
+
 ---
 ---
 
@@ -22,6 +24,8 @@ __Cuando se filtra por id, se obtiene informacion mas detallada del producto sel
 
 **Foto de un elemento con su informacion detallada:**
 
+![Foto de Item](https://github.com/FakuStt/CursoReact/assets/138645047/6b28e711-dbbf-4390-bc30-6f53efd062c7)
+
 
 ---
 ### Funcionamiento del Spinner
@@ -32,6 +36,8 @@ __Tambien, mientras navegaba por la pagina, me di cuenta que las funciones y pro
 
 __**Aqui esta su funcionamiento:**__
 
+![GIF mostrando spinner](https://github.com/FakuStt/CursoReact/assets/138645047/56e465f5-dc5f-4cf7-92bf-9df29f11fe98)
+
 
 ---
 ### Logica del Contador
@@ -39,6 +45,8 @@ __**Aqui esta su funcionamiento:**__
 __*¿Que pasa con el contador que nos encontramos en cada item? ¿El boton agregar al carrito funciona?*__
 
 **Este es el contador:**
+
+![Foto del Contador](https://github.com/FakuStt/CursoReact/assets/138645047/050e7933-6cbe-4c2f-b7be-a0c1f1951060)
 
 __En principio, el numero que acompañaba al logo del carrito estaba fijo! Pero una vez que implementamos context, logramos hacer que este numero dependiera de cuantos elementos habiamos agregado al carrito!__
 
@@ -61,19 +69,24 @@ __**Lo que sucede es que no se agregan los dos items por separado, la logica est
 
 **Como a continuacion se muestra:**
 
+![GIF mostrando carrito](https://github.com/FakuStt/CursoReact/assets/138645047/82a6e9be-0a3a-4d76-a232-368efe4bd52b)
+
 __Por ultimo, se encuentran dos botones a lo ultimo del carrito. Uno de ellos es para vaciar el carrito, el cual elimina absolutamente todos los items del carrito.__
 
 __Otro boton que se muestra es para enviar el pedido, y su funcionalidad la explicaremos a continuacion.__
 
+---
+
 ### Funcionalidad del boton Ordenar Pedido
 
-__Este boton te redirecciona a un apartado. En este, se mostrara un formulario para completar! Aqui deberas poner tu nombre y tu email. Una vez que se aprieta en ordenar pedido, los datos personales y su pedido queda guardado en la base de datos con un id unico, que se mostrara en pantalla.__
+__**Este boton te redirecciona a un apartado.** En este, se mostrara un formulario para completar! Aqui deberas poner tu nombre y tu email. Una vez que se aprieta en ordenar pedido, los datos personales y su pedido queda guardado en la base de datos con un id unico, que se mostrara en pantalla.__
 
----
 ---
 
 
 ### Fin de la presentacion de la pagina, te esperamos por aqui!
+
+---
 
 
 
